@@ -1,1 +1,1 @@
-run: java -jar target/DiscordRoleAssignBot-1.0.0-jar-with-dependencies.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/DiscordRoleAssignBot-1.0.0-jar-with-dependencies.jar
