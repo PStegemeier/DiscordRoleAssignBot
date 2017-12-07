@@ -19,14 +19,12 @@ public class Main {
 	 */
 	public static void main (String args[]) {
 		try {
-			jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Hidden.botToken).buildBlocking();
+			jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Hidden.botToken).buildAsync();
 			jda.setAutoReconnect(true);
 		} catch (IllegalArgumentException e) {
 			System.out.println("ERROR: No token entered, fix it.");
 		} catch (LoginException e) {
 			System.out.println("ERROR: The token entered is invalid, fix it.");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
