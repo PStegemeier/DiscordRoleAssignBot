@@ -3,6 +3,7 @@ package com.urakake.discordbot;
 
 import com.urakake.discordbot.utils.BotListener;
 import com.urakake.discordbot.utils.Hidden;
+import com.urakake.discordbot.utils.Reminder;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -21,6 +22,7 @@ public class Main {
 		try {
 			jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Hidden.botToken).buildAsync();
 			jda.setAutoReconnect(true);
+			new Reminder(15);
 		} catch (IllegalArgumentException e) {
 			System.out.println("ERROR: No token entered, fix it.");
 		} catch (LoginException e) {
